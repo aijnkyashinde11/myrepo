@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Raleway-Regular';
+  src: url('/assets/fonts/Raleway-Regular.ttf') format('truetype');
+}
+
+$font-stack: 'Raleway-Regular', Helvetica, sans-serif;
+$primary-color: #000;
+$header-color: #333;
+$background-color: rgb(240, 240, 240);

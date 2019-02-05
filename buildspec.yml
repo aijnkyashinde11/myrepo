@@ -1,0 +1,25 @@
+version: 0.2
+env:
+    parameter-store:
+        accessId: "applestore.build.accessId"
+        secretKey: "appleStore.build.secretKey"
+phases:
+    install:
+        commands:
+            - echo Installing source NPM dependencies...
+            - npm --silent install -g npm@latest
+            - npm --silent install -g @angular/cli
+            - npm --silent install
+            - echo Build for environment $BUILD_ENV
+    build:
+        commands:
+            - echo Build started use output hashing on `date`
+            - echo Build now use output hashing
+            - ng build --prod --output-path=dist
+            - cd dist
+            - pwd
+            - ls
+artifacts:
+    files:
+        - dist/*
+    discard-paths: yes
